@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stripe_with_flutter/utils/stripe_hepler.dart';
@@ -28,14 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
               String currencyy = 'PKR';
 
               try {
-                // await StripeService.initPayment(amount, currency);
-                // await StripeService.presentPaymentSheet();
                 print("Click Fpr pay");
 
                 await paymentController.makePayment(
-                    // context: context,
-                    amount: amountt,
-                    currency: currencyy);
+                    amount: amountt, currency: currencyy);
               } catch (e) {
                 print(e);
                 ScaffoldMessenger.of(context).showSnackBar(
